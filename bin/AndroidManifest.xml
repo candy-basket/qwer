@@ -2,12 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.candybasket"
     android:versionCode="1"
-    android:versionName="1.0" >
-
+    android:versionName="1.0.4" >
+    
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="18" />
-
+        android:targetSdkVersion="17" />
+    
+    <!-- Intenet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- GCM -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <!-- Log & Volley -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- call phone -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>   
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
