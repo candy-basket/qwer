@@ -12,6 +12,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 	/*한글테스틍ㅇㅇㅇㅇㅇ*/
+	/*한글테스틍ㅇㅇㅇㅇㅇ*/
+	//한글한글한글
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
