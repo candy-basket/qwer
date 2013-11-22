@@ -44,7 +44,11 @@
         <activity android:name="com.candybasket.app.A_01" android:screenOrientation="portrait" ></activity>
         <activity android:name="com.candybasket.app.A_02" android:screenOrientation="portrait" ></activity>
         <activity android:name="com.candybasket.app.A_03" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.A_04" android:screenOrientation="portrait" ></activity>
         <activity android:name="com.candybasket.app.A_tutorial" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.CBMain"
+			android:screenOrientation="portrait"
+			android:theme="@style/NaviCBTitle"></activity>
         
     </application>
 

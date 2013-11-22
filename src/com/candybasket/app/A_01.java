@@ -144,11 +144,13 @@ public class A_01 extends Activity {
 		        
 			}
 		});
-
+    	
     	btnLogin.setOnClickListener( new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-
+				Intent intent = new Intent(A_01.this, CBMain.class);
+		        startActivity(intent);
+		        finish();
 			}
 		});
     	

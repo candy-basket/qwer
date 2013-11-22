@@ -4,8 +4,11 @@ import com.candybasket.R;
 import com.candybasket.app.A_01;
 import com.candybasket.app.A_02;
 import com.candybasket.app.A_03;
+import com.candybasket.app.A_04;
+import com.candybasket.app.A_tutorial;
 import com.candybasket.util.etc.FontUtil;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -115,7 +118,9 @@ public class A_03_Adapter extends PagerAdapter{
 				if(tempPosition != 7){
 					A_03.move(tempPosition+1);
 				}else{
-					
+					Intent intent = new Intent(mContext, A_04.class);
+					mContext.startActivity(intent);
+					((Activity) mContext).finish();
 				}
 			}
 		});
@@ -126,7 +131,9 @@ public class A_03_Adapter extends PagerAdapter{
 				if(tempPosition != 7){
 					A_03.move(tempPosition+1);
 				}else{
-					
+					Intent intent = new Intent(mContext, A_04.class);
+					mContext.startActivity(intent);
+					((Activity) mContext).finish();
 				}
 			}
 		});
