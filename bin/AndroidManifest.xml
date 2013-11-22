@@ -40,11 +40,11 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.candybasket.app.A_00"
-			android:screenOrientation="portrait" ></activity>
-        
-        <activity android:name="com.candybasket.app.A_01" 
-			android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.A_00" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.A_01" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.A_02" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.A_03" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.candybasket.app.A_tutorial" android:screenOrientation="portrait" ></activity>
         
     </application>
 

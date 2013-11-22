@@ -29,18 +29,17 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/select_a01_btn_main" />
-
+    
     <RelativeLayout
         android:id="@+id/login_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#50000000"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="#50000000" >
+        android:layout_marginBottom="300dp"
+        android:paddingBottom="10dp" >
 
         <ImageView
             android:id="@+id/btn_close_login"
@@ -48,9 +47,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:src="@drawable/a01_btn_x" />
 
         <EditText
@@ -60,29 +59,32 @@
             android:layout_alignLeft="@+id/btn_login"
             android:layout_alignRight="@+id/btn_login"
             android:layout_below="@+id/btn_close_login"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="#ffffff"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:singleLine="true"/>
+            android:singleLine="true" >
+
+            <requestFocus />
+        </EditText>
 
         <TextView
             android:id="@+id/find_imail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/btn_login" />
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/find_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_below="@+id/btn_login"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/btn_login" />
+            android:layout_marginTop="10dp" />
 
         <RelativeLayout
             android:id="@+id/low"
@@ -102,9 +104,9 @@
             android:layout_alignRight="@+id/editEmail"
             android:layout_below="@+id/low"
             android:background="#ffffff"
-            android:singleLine="true"
             android:paddingBottom="10dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="10dp"
+            android:singleLine="true" />
 
         <Button
             android:id="@+id/btn_login"
@@ -112,11 +114,72 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/editPassword"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/select_a01_btn_blue" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/find_email_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#50000000"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="300dp"
+        android:paddingBottom="10dp" >
+
+        <ImageView
+            android:id="@+id/btn_close_find_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/a01_btn_x" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btn_close_find_email"
+            android:background="#ffffff"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editEmail"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/select_a01_btn_blue" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/title_find_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="" />
 
+    </RelativeLayout>
+    
 </RelativeLayout>

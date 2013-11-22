@@ -2,6 +2,8 @@ package com.candybasket.util.etc;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 
 /**
  * com.candybasket.util.etc
@@ -11,7 +13,7 @@ import android.graphics.Typeface;
  * @author     : ilsung
  * @Date        : 2013. 11. 21. ¿ÀÈÄ 7:39:53
  * @Version    : 1.0.4
- * @See         : ³ª´®°íµñ regular, bold, extraboldÀÇ ±Û¾¾Ã¼
+ * @See         : ³ª´®°íµñ regular, bold, extraboldÀÇ ±Û¾¾Ã¼, TextViewÀÇ ¹ØÁÙ
  * @Todo       
  */
 public class FontUtil {
@@ -38,6 +40,18 @@ public class FontUtil {
 			return Typeface.createFromAsset(mContext.getAssets(), EXTRA_BOLD_FONT);
 		}
 		return Typeface.createFromAsset(mContext.getAssets(), REGULAR_FONT);
+	}
+	
+	/**
+	 * @param str
+	 * @return ¹ØÁÙÃÄÁø ½ºÆ®¸µÀ» ¹İÈ¯ÇØÁØ´Ù
+	 */
+	public static SpannableString getUnderLineString(String str){
+	
+    	SpannableString contentUnderline = new SpannableString(str);
+    	contentUnderline.setSpan(new UnderlineSpan(), 0, contentUnderline.length(), 0);
+		
+		return contentUnderline;
 	}
 	
 }

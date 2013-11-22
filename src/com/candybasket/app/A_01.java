@@ -1,6 +1,7 @@
 package com.candybasket.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,12 +20,12 @@ public class A_01 extends Activity {
 	private static String TAG = A_01.class.getSimpleName();
 	
 	private Button btnLoginView, btnSignup, btnLogin;
-	private TextView findEmail, findPassword;
-	private RelativeLayout loginView;
-	private ImageView btnCloseLogin;
+	private TextView findEmail, findPassword, titleFindEmail;
+	private RelativeLayout loginView, findEmailView;
+	private ImageView btnCloseLogin, btnCloseFindEmail;
 	private EditText editMail, editPassword;
 	
-	private boolean isLoginView = false;
+	private boolean isLoginView = false, isFindEmailView = false;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,9 @@ public class A_01 extends Activity {
     	btnCloseLogin = (ImageView) findViewById(R.id.btn_close_login);
     	editMail = (EditText) findViewById(R.id.editEmail);
     	editPassword = (EditText) findViewById(R.id.editPassword);
+    	findEmailView = (RelativeLayout) findViewById(R.id.find_email_view); 
+    	btnCloseFindEmail = (ImageView) findViewById(R.id.btn_close_find_email);
+    	titleFindEmail = (TextView) findViewById(R.id.title_find_email); 
     	
     	setLayoutStyle();
     	setLayoutAction();
@@ -107,6 +111,12 @@ public class A_01 extends Activity {
     	editMail.setHintTextColor(0xffc6c6c6);
     	editPassword.setHint("패스워드");
     	editPassword.setHintTextColor(0xffc6c6c6);
+    	
+    	findEmailView.setVisibility(View.INVISIBLE);
+    	
+    	titleFindEmail.setText("이메일찾기");
+    	titleFindEmail.setTextColor(Color.WHITE);
+    	titleFindEmail.setTypeface(FontUtil.loadTypeface(A_01.this));
     }
     
     private void setLayoutAction(){
@@ -116,6 +126,7 @@ public class A_01 extends Activity {
 			public void onClick(View view) {
 				if(isLoginView == false){
 					loginView.setVisibility(View.VISIBLE);
+					closeFindEmailView();
 				}else{
 					loginView.setVisibility(View.INVISIBLE);
 				}
@@ -127,6 +138,10 @@ public class A_01 extends Activity {
 			@Override
 			public void onClick(View view) {
 
+		        Intent intent = new Intent(A_01.this, A_02.class);
+		        startActivity(intent);
+		        finish();
+		        
 			}
 		});
 
@@ -140,13 +155,44 @@ public class A_01 extends Activity {
     	btnCloseLogin.setOnClickListener( new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				if(loginView.getVisibility() == View.VISIBLE){
-					loginView.setVisibility(View.INVISIBLE);
-					isLoginView = !isLoginView;
-				}
+				closeLoginView();
 			}
 		});
     	
+    	findEmail.setOnClickListener( new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if(isFindEmailView == false){
+					findEmailView.setVisibility(View.VISIBLE);
+					closeLoginView();
+				}else{
+					findEmailView.setVisibility(View.INVISIBLE);
+				}
+				isFindEmailView = !isFindEmailView;
+			}
+		});
+    	
+    	btnCloseFindEmail.setOnClickListener( new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				closeFindEmailView();
+			}
+		});
+    	
+    }
+    
+    private void closeLoginView(){
+    	if(loginView.getVisibility() == View.VISIBLE){
+			loginView.setVisibility(View.INVISIBLE);
+			isLoginView = !isLoginView;
+		}
+    }
+    
+    private void closeFindEmailView(){
+    	if(findEmailView.getVisibility() == View.VISIBLE){
+			findEmailView.setVisibility(View.INVISIBLE);
+			isFindEmailView = !isFindEmailView;
+		}
     }
 }
 

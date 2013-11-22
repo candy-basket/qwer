@@ -28,8 +28,8 @@ public class A_00 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_00);
-
-        Intent intent = new Intent(A_00.this, A_01.class);
+        //A_01
+        Intent intent = new Intent(A_00.this, A_tutorial.class);
         startActivity(intent);
         finish();
         
