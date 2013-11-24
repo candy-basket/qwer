@@ -1,21 +1,24 @@
 package com.candybasket.app;
 
-import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.TypedValue;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
 
 import com.candybasket.R;
+import com.candybasket.model.adapter.CBMain_Adapter;
 import com.candybasket.util.etc.FontUtil;
 import com.candybasket.wiget.PagerSlidingTabStrip;
 import com.candybasket.wiget.PagerSlidingTabStrip.TabSwipeSelector;
 import com.google.analytics.tracking.android.EasyTracker;
 
-public class CBMain extends Activity {
+public class CBMain extends FragmentActivity {
 
 	private static String TAG = ActivityTemplet.class.getSimpleName();
 	
@@ -23,6 +26,7 @@ public class CBMain extends Activity {
 	private ViewPager pager;
 	public TextView navText;
 	private TabSwipeSelector mCallback;
+	private CBMain_Adapter mAdapter;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +41,20 @@ public class CBMain extends Activity {
 		}
         
         setContentView(R.layout.cb_main);
-        /*
-        Intent intent = new Intent(A_00.this, G_01.class);
-        startActivity(intent);
-        finish();
-        */
+ 
+        setLayout(useTitleFeature, window);
+        
+        mAdapter = new CBMain_Adapter(getSupportFragmentManager(), this);
+        pager.setAdapter(mAdapter);
+		pager.setOffscreenPageLimit(CBMain_Adapter.ICONS.length);
+		
+		final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources() .getDisplayMetrics());
+		pager.setPageMargin(pageMargin);
 
+		tabs.setViewPager(pager);
+		tabs.setIndicatorColor(0xFFFFC65B);//ÅÇ ÇÏ´Ü»ö ÁÙ
+		tabs.setDividerColor(Color.TRANSPARENT);//ÅÇ °£ ÁÙ »ö
+		tabs.setCallback(mCallback);
     }
     
     @Override
@@ -67,7 +79,7 @@ public class CBMain extends Activity {
     	EasyTracker.getInstance(this).activityStop(this);
     }
     
-    void setLayout(boolean useTitleFeature, Window window){
+    private void setLayout(boolean useTitleFeature, Window window){
 		
 		if (useTitleFeature) {
 		    window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.navi_cb);
