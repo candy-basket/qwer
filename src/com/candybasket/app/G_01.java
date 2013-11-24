@@ -6,6 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.candybasket.R;
+import com.candybasket.util.async.task.G_01_LodingTask;
 import com.candybasket.wiget.CTextView;
 import com.candybasket.wiget.CustomStoreAnimation;
 import com.candybasket.wiget.InfiniteViewPager;
