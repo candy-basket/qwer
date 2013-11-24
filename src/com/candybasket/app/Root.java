@@ -20,7 +20,7 @@ public class Root extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-        Intent i = new Intent(Root.this, A_00.class);
+        Intent i = new Intent(Root.this, G_01.class);
         startActivity(i);
         finish();
         

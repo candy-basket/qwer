@@ -18,15 +18,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -34,7 +31,7 @@ import android.widget.TextView;
 
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
-	private static String TAG = PagerSlidingTabStrip.class.getSimpleName();
+	//private static String TAG = PagerSlidingTabStrip.class.getSimpleName();
 	
 	private TabSwipeSelector mCallback = null;
 	
@@ -57,7 +54,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     };
 	// @formatter:on
 
-	private LinearLayout.LayoutParams defaultTabLayoutParams;
+	//private LinearLayout.LayoutParams defaultTabLayoutParams;
 	private LinearLayout.LayoutParams expandedTabLayoutParams;
 
 	private final PageListener pageListener = new PageListener();
@@ -161,7 +158,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		dividerPaint.setAntiAlias(true);
 		dividerPaint.setStrokeWidth(dividerWidth);
 
-		defaultTabLayoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+		//defaultTabLayoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
 		expandedTabLayoutParams = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f);
 
 		if (locale == null) {
@@ -245,21 +242,13 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	private void addIconTab(final int position, int resId) {
 		
-		float screenWidth = getContext().getResources().getDisplayMetrics().widthPixels;
-		
-		//RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(getContext().getResources().getDisplayMetrics().widthPixels/4, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
 		LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         RelativeLayout tabView = (RelativeLayout) inflater.inflate(R.layout.tab, null); 
-        //tabView.setLayoutParams(params);
 		ImageView tabImageView = (ImageView)tabView.findViewById(R.id.tab_img);
 		tabImageView.setFocusable(true);
+		
 		tabImageView.setImageResource(resId);
-		/*
-		ImageButton tab = new ImageButton(getContext());
-		tab.setFocusable(true);
-		tab.setImageResource(resId);
-		*/
+
 		tabImageView.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -277,10 +266,10 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 			View v = tabsContainer.getChildAt(i);
 
-			//TODO
-			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(getContext().getResources().getDisplayMetrics().widthPixels/4, LinearLayout.LayoutParams.MATCH_PARENT);
+			LinearLayout.LayoutParams params = 
+					new LinearLayout.LayoutParams(getContext().getResources().getDisplayMetrics().widthPixels/4, 
+														      LinearLayout.LayoutParams.MATCH_PARENT);
 
-			//v.setLayoutParams(defaultTabLayoutParams);
 			v.setLayoutParams(params);
 			v.setBackgroundResource(tabBackgroundResId);
 			
